@@ -1,123 +1,25 @@
-@font-face {
-  font-family: 'GT America Mono';
-  src: url('/fonts/GT-America-Mono-Bold.OTF');
-  src: url('/fonts/GT-America-Mono-Regular.OTF');
-}
-
 $black: #000;
 $white: #fff;
 $purp: #8481E1;
 $gutter: 20px;
 
-.container{
-  width: 100vw;
-  flex-basis: 100vh;
-  min-height: 100vh;
-  background-color: $white;
-  font-family: "GT America Mono", monospace;
-  padding: 20px;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  main{
-    height: 100%;
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+%nav-font{
+  font-size: 14px;
+  @media(max-width: 550px) {
+    font-size: 16px;
   }
 }
 
-.About{
-  width: 100%;
-  max-width: 1300px;
-  height: 100%;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  .story, .team{
-    margin-left: 0;
-  }
-
-  @media only screen and (min-device-width: 650px) {
-    .story { margin-left: 15%; }
-    .team { margin-left: 30%; }
-  }
-
-  @media only screen and (min-device-width: 1024px) {
-    .story { margin-left: calc(100vw / 12 * 1 + (#{$gutter} * 3)); }
-    .team { margin-left: calc(100vw / 12 * 3 + (#{$gutter} * 7)); }
-  }
-
-  .story{
-    text-transform: uppercase;
-  }
-
-
-  .team{
-    h2{
-      margin-bottom: 25px;
-    }
-    &-wrapper{
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap: 18px;
-    }
-    &-member{
-      margin: 15px 0;
-    }
+%p-font{
+  font-size: 14px;
+  @media(max-width: 550px) {
+    font-size: 16px;
   }
 }
 
-h1{
-  font-size: 40px;
-  margin: 0 !important;
-}
-h2{
+%h2-font{
   font-size: 16px;
-  font-family: "GT America Mono", monospace;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-p{
-  font-size: 15px;
-  margin: 0;
-}
-
-a:link {
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-}
-a:link {
-  color: $black;
-}
-a:visited {
-  color: $black;
-}
-a:hover {
-  color: $black;
-  p:last-of-type{
-    color: $purp;
+  @media(max-width: 550px) {
+    font-size: 18px;
   }
-}
-a:active {
-  color: $black;
-}
-
-::selection {
-  background: $black;
-  color: $white;
-}
-::-moz-selection {
-  background: $black;
-  color: $white;
 }

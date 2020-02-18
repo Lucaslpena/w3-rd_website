@@ -1,7 +1,7 @@
-import Wizard from './wizard';
 import Nav from "./nav";
+import Footer from "./footer";
 
 export {
-  Wizard,
-  Nav
+  Nav,
+  Footer
 }

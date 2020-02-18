@@ -1,0 +1,19 @@
+@import "../theme";
+
+nav{
+  @extend %nav-font;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  div{
+    text-align: center;
+  }
+  & > div:nth-of-type(2){
+    @media(max-width: 550px) {
+      width: 100%;
+      order: 3;
+    }
+  }
+}

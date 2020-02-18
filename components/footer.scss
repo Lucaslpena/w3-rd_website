@@ -1,7 +1,9 @@
-nav{
+@import "../theme";
+
+footer{
+  @extend %nav-font;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: baseline;
   text-transform: uppercase;
-  font-size: 14px;
 }
