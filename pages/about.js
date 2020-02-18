@@ -57,21 +57,21 @@ class About extends Component {
         title:  'Designer',
         name_leet:  '0l1v3r ju661n5',
         title_leet: 'd3516n3r',
-        link: '/about',
+        link: 'https://www.linkedin.com/in/oliver-juggins/',
         hover: false
       },{
         name:   'Sebastian Narvaez',
         title:  'Designer',
         name_leet:  '53b45714n n4rv43z',
         title_leet: 'd3516n3r',
-        link: '/about',
+        link: 'https://www.linkedin.com/in/sebastiann89/',
         hover: false
       },{
         name:   'Svenja Pieritz',
         title:  'Cognitive Researcher',
         name_leet:  '5v3nj4 p13r17z',
         title_leet: 'c06n171v3 r3534rch3r',
-        link: '/about',
+        link: 'https://www.linkedin.com/in/svenja-pieritz-04b233156/',
         hover: false
       }
       ]
