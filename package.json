@@ -14,8 +14,11 @@
     "next": "9.2.2",
     "nextjs-fonts": "^0.22.0",
     "node-sass": "^4.13.1",
+    "p5": "^1.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-normalize": "^0.4.4"
+    "react-normalize": "^0.4.4",
+    "react-p5": "^1.3.2",
+    "react-p5-wrapper": "^2.0.0"
   }
 }
