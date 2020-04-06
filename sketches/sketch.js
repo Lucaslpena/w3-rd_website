@@ -39,9 +39,9 @@ export default (w, h) => (p) => {
     x += xspeed;
     y += yspeed;
 
-    p.pointLight(0, 0, 255, 0, -200, 0);
-    p.pointLight(0, 255, 0, 0, 200, 0);
-    p.ambientLight(25);
+    p.pointLight(210, 154, 205, 0, -300, 0);
+    p.pointLight(112, 120, 229, 0, 300, 0);
+    p.ambientLight(40);
     p.push();
 
     p.translate(x, y);
@@ -62,6 +62,7 @@ export default (w, h) => (p) => {
     p.rotateY(thetaY);
     p.rotateZ(thetaZ);
     p.ambientMaterial(255);
+    // p.specularMaterial(10);
     p.noStroke();
     p.model(obj);
 
