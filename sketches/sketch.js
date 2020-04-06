@@ -4,7 +4,9 @@ export default (w, h) => (p) => {
   let x, y, xspeed, yspeed;
   let windowXMin, windowXMax, windowYMin, windowYMax;
   let thetaX, thetaY, thetaZ;
-  let thetaDegrade = 0.1;
+  let thetaDegrade = 0.01;
+
+  window.p = p;
 
   p.preload = () => {
     obj = p.loadModel('assets/weird-object-old.obj', true);
@@ -24,8 +26,8 @@ export default (w, h) => (p) => {
     x = p.random(windowXMin, windowXMax);
     y = p.random(windowYMin, windowYMax);
 
-    xspeed = 1;
-    yspeed = 1;
+    xspeed = p.randomGaussian(2);
+    yspeed = p.randomGaussian(2);
 
     thetaX = 0;
     thetaY = 0;
@@ -36,18 +38,24 @@ export default (w, h) => (p) => {
 
   p.draw = () => {
     p.background(255);
-    x += xspeed;
-    y += yspeed;
+    thetaDegrade += 0.01;
+    x += (xspeed * p.noise(thetaDegrade));
+    y += (xspeed * p.noise(thetaDegrade));
 
-    p.pointLight(210, 154, 205, 0, -300, 0);
-    p.pointLight(112, 120, 229, 0, 300, 0);
-    p.ambientLight(40);
+    p.pointLight(210, 154, 205, 400, -400, 0);
+    p.pointLight(210, 154, 205, -400, -400, 0);
+
+    p.pointLight(112, 120, 229, 400, 400, 0);
+    p.pointLight(112, 120, 229, -400, 400, 0);
+
+    p.ambientLight(30);
+    p.ambientMaterial(255);
+    p.noStroke();
+
     p.push();
 
     p.translate(x, y);
-    p.fill('#FF0000');
     p.scale(3);
-
     if (mousePress === true){
       console.log('z-tate');
       thetaY = p.frameCount * 0.03 ;
@@ -56,17 +64,21 @@ export default (w, h) => (p) => {
     }
     thetaX = p.frameCount * 0.01;
     thetaZ = p.frameCount * 0.01;
-
-
     p.rotateX(thetaX);
     p.rotateY(thetaY);
     p.rotateZ(thetaZ);
-    p.ambientMaterial(255);
     // p.specularMaterial(10);
     p.noStroke();
     p.model(obj);
 
     p.pop();
+    p.push();
+    p.translate(p.windowWidth * .3, p.windowHeight *.3, -400);
+    p.sphere(300);
+    p.pop();
+
+
+
 
     if ( (x + 100 <= windowXMin) || (x + 100 >= windowXMax)){
       xspeed *= -1;
@@ -74,7 +86,6 @@ export default (w, h) => (p) => {
     if ( (y + 100 <= windowYMin) || (y + 100 >= windowYMax)) {
       yspeed *= -1;
     }
-
   }
 
   p.windowResized = () => {
