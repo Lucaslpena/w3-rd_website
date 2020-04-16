@@ -28,6 +28,27 @@
   }
 }
 
+.title{
+  position: fixed;
+  bottom: 50vh;
+  left: 10vw;
+  font-size: 72px;
+  font-weight: normal;
+  transform: rotateZ(-25deg);
+
+  @media only screen and (min-device-width: 650px) {
+    bottom: 40vh;
+  }
+}
+
+.oval{
+  position: fixed;
+  bottom: 10vh;
+  right: 10vw;
+  height: 300px;
+  width: 300px;
+}
+
 .About{
   width: 100%;
   max-width: 1300px;

@@ -71,14 +71,6 @@ export default (w, h) => (p) => {
     p.noStroke();
     p.model(obj);
 
-    p.pop();
-    p.push();
-    p.translate(p.windowWidth * .3, p.windowHeight *.3, -400);
-    p.sphere(300);
-    p.pop();
-
-
-
 
     if ( (x + 100 <= windowXMin) || (x + 100 >= windowXMax)){
       xspeed *= -1;
