@@ -29,7 +29,7 @@ class About extends Component {
         title:  'Hardware Engineer',
         name_leet:  'ru7v1j p47h4k',
         title_leet: 'h4rdw4r3 3n61n33r',
-        link: 'http://rutvijp.gitub.io/',
+        link: 'https://rutvijp.github.io/',
         hover: false
       },{
         name:   'Sophie Röcken',
